@@ -1,13 +1,14 @@
 int ledR = 3;
 int ledRbis = 6;
-int ledG = 2;
-int ledGbis = 5;
-int ledV =7 ;
-int ledVbis = 4;
+int ledG = 4;
+int ledGbis = 7;
+int ledV =5 ;
+int ledVbis = 8;
 int lampeggi;
 int rorde;
 int dGiallo;
 int dLampeggi;
+
 void fermi(void){
   digitalWrite (ledR, HIGH);
   digitalWrite (ledG, LOW);
@@ -81,19 +82,19 @@ void setup() {
   Serial.begin(9600);
   Serial.println("inserire numero di lampeggi");
   while(Serial.available()==0){}
-  int lampeggi = Serial.readString().toInt();
+  lampeggi = Serial.readString().toInt();
   Serial.println(lampeggi);
   Serial.println("inserire la durata dei lampeggi(in ms)");
   while(Serial.available()==0){}
-  int dLampeggi = Serial.readString().toInt();
+  dLampeggi = Serial.readString().toInt();
   Serial.println(dLampeggi);
   Serial.println("durata del colore giallo(in ms)");
   while(Serial.available()==0){}
-  int dGiallo = Serial.readString().toInt();
+  dGiallo = Serial.readString().toInt();
   Serial.println(dGiallo);
   Serial.println("durata del colore verde/rosso(in ms)");
   while(Serial.available()==0){}
-  int rorde = Serial.readString().toInt();
+  rorde = Serial.readString().toInt();
   Serial.println(rorde);
 }
 
